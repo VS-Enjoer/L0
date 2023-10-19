@@ -38,9 +38,9 @@ func HtmlStart(cache map[string]Model.ModelOrder) {
 
 	http.Handle("/", http.FileServer(http.Dir("HTML/View")))
 
-	port := "8080"
-	fmt.Printf("Сервер запущен. http://localhost:8080")
-	err := http.ListenAndServe(":"+port, nil)
+	fmt.Println("Сервер запущен. http://localhost:8080")
+
+	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		log.Fatalf("Ошибка при запуске HTTP-сервера: %v", err)
 	}
